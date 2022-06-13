@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="axios.js"></script>
+    <script type="text/javascript" src="CallApiV1.js"></script>
+</head>
+
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid;
+    }
+</style>
+
+<body>
+    <div id="dg">
+
+    </div>
+</body>
+
+<script>
+
+    window.onload = async function () {
+        let div_dg = document.getElementById('dg');
+        let dg = '';
+
+        let respone = await GetUsers();
+
+        console.log(respone);
+
+        if (respone.status == "200") {
+
+            console.log(respone.data);
+
+            let data = respone.data;
+
+            dg += `<table>
+                        <tr>
+                            <th>Id</th>
+                            <th>UserName</th>
+                            <th>Password</th>
+                            <th>Email</th>
+                        </tr>`;
+
+            for (let item of data) {
+                dg += `<tr>
+                            <td>${item.id}</td>
+                            <td>${item.userName}</td>
+                            <td>${item.password}</td>
+                            <td>${item.email}</td>
+                        </tr>`;
+            }
+
+            dg += `</table>`;
+
+            div_dg.innerHTML += dg;
+        } else {
+            div_dg.innerHTML += error.respone.data;
+        }
+    }
+
+</script>
+
+</html>
