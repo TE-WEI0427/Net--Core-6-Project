@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Task</title>
+  <script type="text/javascript" src="axios.js"></script>
+  <script type="text/javascript" src="CallApiV1.js"></script>
+</head>
+
+<body>
+  Token : <input type="text" id="Token">&nbsp;&nbsp;<button onclick="Login()">Login</button>
+  <hr>
+  <button onclick="Task1()">Task1</button>
+  <div id="Task1"></div>
+  <hr>
+  <button onclick="AuthTask1()">AuthTask1</button>
+  <div id="AuthTask1"></div>
+</body>
+
+<script>
+
+  function Login() {
+    localStorage.setItem('Token', document.getElementById('Token').value);
+  }
+
+  async function Task1() {
+
+    let token = localStorage.getItem('Token');
+
+    let res = await Promise.all([DoSomething(token)])
+      .then((response) => {
+        return response;
+      })
+      .catch((error) => {
+        return error;
+      });
+
+    if (res.length === undefined && res.response.status === 401) {
+      document.getElementById('Task1').innerHTML = res.message;
+    } else {
+      let result = res[0].data;
+      document.getElementById('Task1').innerHTML = result;
+    }
+
+  }
+
+  async function AuthTask1() {
+
+    let token = localStorage.getItem('Token');
+
+    let res = await axios.all([Auth(token), DoSomething(token)])
+      .then(axios.spread((acct, perms) => {
+        // axios 回傳的資料在 data 屬性
+        // console.table('FuncA 回傳結果', acct);
+        // fetch 資料可以先在 function 內作 json()
+        // console.table('FuncB 回傳結果', perms);
+
+        return [acct, perms];
+      }))
+      .catch((error) => {
+        return error;
+      });
+
+    if (res.length === undefined && res.response.status === 401) {
+      document.getElementById('AuthTask1').innerHTML = res.message;
+    } else {
+      document.getElementById('AuthTask1').innerHTML = 'Name : ' + res[0].data + ' | TaskResult : ' + res[1].data;
+    }
+
+  }
+
+</script>
+
+</html>

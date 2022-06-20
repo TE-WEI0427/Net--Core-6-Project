@@ -84,3 +84,13 @@ D:\VisualDev\Vs2022\NETCore6_CRUD_Test_V2_AddJWT\NETCore6_CRUD_Test\NETCore6_CRU
 D:\VisualDev\Vs2022\NETCore6_CRUD_Test_V2_AddJWT\NETCore6_CRUD_Test\NETCore6_CRUD_Test\bin\Debug\net6.0\MailKit.dll
 D:\VisualDev\Vs2022\NETCore6_CRUD_Test_V2_AddJWT\NETCore6_CRUD_Test\NETCore6_CRUD_Test\bin\Debug\net6.0\MimeKit.dll
 D:\VisualDev\Vs2022\NETCore6_CRUD_Test_V2_AddJWT\NETCore6_CRUD_Test\NETCore6_CRUD_Test\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+D:\VisualDev\Vs2022\NETCore6_CRUD_Test\NETCore6_CRUD_Test\bin\Debug\net6.0\MailKit.dll
+D:\VisualDev\Vs2022\NETCore6_CRUD_Test\NETCore6_CRUD_Test\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\VisualDev\Vs2022\NETCore6_CRUD_Test\NETCore6_CRUD_Test\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+D:\VisualDev\Vs2022\NETCore6_CRUD_Test\NETCore6_CRUD_Test\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\VisualDev\Vs2022\NETCore6_CRUD_Test\NETCore6_CRUD_Test\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\VisualDev\Vs2022\NETCore6_CRUD_Test\NETCore6_CRUD_Test\bin\Debug\net6.0\MimeKit.dll
+D:\VisualDev\Vs2022\NETCore6_CRUD_Test\NETCore6_CRUD_Test\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+D:\VisualDev\Vs2022\NETCore6_CRUD_Test\NETCore6_CRUD_Test\bin\Debug\net6.0\Scrutor.dll
+D:\VisualDev\Vs2022\NETCore6_CRUD_Test\NETCore6_CRUD_Test\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll
+D:\VisualDev\Vs2022\NETCore6_CRUD_Test\NETCore6_CRUD_Test\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll

@@ -25,10 +25,10 @@ namespace NETCore6_CRUD_Test.Controllers
         public ActionResult<string> DoSomething()
         {
             var userName = _userService.GetMyName();
-            if(userName == "AndyHSU") // 特定使用者權限
+            if(userName == "AndyHSU" || userName == "Andy") // 特定使用者權限
                 return Ok("DoSomething");
             else 
-                return Unauthorized("DoSomething");
+                return Ok("權限不足");
         }
     }
 }

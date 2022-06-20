@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Axios Get And Post API Test</title>
   <script type="text/javascript" src="axios.js"></script>
 </head>
 
@@ -121,7 +121,9 @@
         const tb = document.getElementsByTagName('table')[0];
         document.getElementById('UserName1').textContent = response.data;
       })
-      .catch((error) => console.log(error))
+      .catch((error) => {
+        document.getElementById('UserName1').textContent = error.response.data == '' ? error.message : error.response.data;
+      })
     //#endregion
 
     //#region Axios Get No Authorization Reture 401
@@ -166,7 +168,13 @@
         tb.rows[1].cells[3].textContent = response.data.email;
         tb.rows[1].cells[4].textContent = "";
       })
-      .catch((error) => {tb.rows[1].cells[4].textContent = error.response.data;})
+      .catch((error) => {
+        tb.rows[1].cells[0].textContent = "";
+        tb.rows[1].cells[1].textContent = "";
+        tb.rows[1].cells[2].textContent = "";
+        tb.rows[1].cells[3].textContent = "";
+        tb.rows[1].cells[4].textContent = error.response.data;
+      })
     //#endregion
   }
 

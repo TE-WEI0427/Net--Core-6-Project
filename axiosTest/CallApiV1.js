@@ -7,8 +7,8 @@ function GetUsers() {
     return axios.get(Host.config + 'api/User/GetUsers')
 };
 
-function GetUser(id) {
-    return axios.get(Host.config + 'api/User/GetUsers/?id=' + id)
+function GetUser(Id) {
+    return axios.get(Host.config + 'api/User/GetUsers/?id=' + Id)
 };
 
 function AddUser(User) {
@@ -19,8 +19,8 @@ function UpdateUser(User) {
     return axios.get(Host.config + 'api/User/UpdateUser', User)
 };
 
-function DeleteUser(id) {
-    return axios.get(Host.config + 'api/User/DeleteUser/?id=' + id)
+function DeleteUser(Id) {
+    return axios.get(Host.config + 'api/User/DeleteUser/?id=' + Id)
 };
 
 //User Schema
@@ -32,3 +32,29 @@ class User {
         this.email = email;
     }
 }
+
+// Auth
+function Auth(Token) {
+
+    return axios.get(Host.config + 'api/Auth/GetMe',
+        {
+            headers:
+            {
+                "Authorization": `Bearer ` + Token
+            }
+        })
+
+};
+
+// Task
+function DoSomething(Token) {
+
+    return axios.get(Host.config + 'api/task/dosomething',
+        {
+            headers:
+            {
+                "Authorization": `Bearer ` + Token
+            }
+        })
+
+};

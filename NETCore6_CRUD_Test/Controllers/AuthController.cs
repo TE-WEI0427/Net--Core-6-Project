@@ -23,7 +23,7 @@ namespace NETCore6_CRUD_Test.Controllers
         /// 驗證後取得使用者名稱
         /// </summary>
         /// <returns></returns>
-        [HttpGet, Authorize]
+        [HttpGet("GetMe"), Authorize]
         public ActionResult<string> GetMe()
         {
             var userName = _userService.GetMyName();
